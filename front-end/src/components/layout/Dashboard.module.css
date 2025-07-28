@@ -1,0 +1,118 @@
+/* Replace your existing file content with this */
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 16rem;
+  flex-shrink: 0;
+  transition: width 0.3s ease, padding 0.3s ease;
+  padding: 1rem;
+  background-color: var(--background-light);
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebarClosed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, padding 0.3s ease;
+  border-right: none;
+}
+
+.mainContent {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+/* --- New styles for the resizable layout --- */
+.editorContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px; /* Space for the toggle button */
+  min-height: 0; /* Important for flexbox children */
+}
+
+.previewPane,
+.editorPane {
+  /* No longer use flex: 1, height is set by the component */
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.previewPane {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.editorPane {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Style for the draggable divider */
+.resizerY {
+  height: 10px;
+  background-color: var(--background-light);
+  cursor: ns-resize; /* North-South resize cursor */
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Add a visual grip to the resizer */
+.resizerY::after {
+  content: '•••';
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  transform: rotate(90deg);
+}
+
+.promptSection {
+  flex-shrink: 0;
+}

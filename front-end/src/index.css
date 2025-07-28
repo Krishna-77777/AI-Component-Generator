@@ -1,0 +1,24 @@
+:root {
+  --background-dark: #111827; /* Dark gray for the main background */
+  --background-light: #1f2937; /* Lighter gray for sidebars/panels */
+  --border-color: #374151;
+  --text-primary: #f9fafb; /* Off-white */
+  --text-secondary: #9ca3af; /* Lighter gray for secondary text */
+  --accent-color: #3b82f6; /* A vibrant blue for buttons and highlights */
+  --accent-hover: #2563eb;
+  --success-color: #16a34a;
+  --danger-color: #ef4444;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-dark); /* Default dark background */
+}
+
+* {
+  box-sizing: border-box;
+}
